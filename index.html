@@ -3,47 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xin Chào với Hiệu Ứng</title>
+  <title>Danh sách tài liệu</title>
   <style>
-    /* Body toàn màn hình */
     body {
       margin: 0;
-      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(120deg, #ff7eb3, #ff758c, #ff6a70, #ff7850);
-      background-size: 400% 400%;
-      animation: gradientAnimation 10s ease infinite;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
+      height: 100vh;
     }
 
-    /* Hiệu ứng background chuyển động */
-    @keyframes gradientAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    /* Container chính */
+    .container {
+      text-align: center;
     }
 
-    /* Dòng chữ "Xin chào" */
     h1 {
-      color: white;
-      font-size: 4rem;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-                   0 0 20px rgba(255, 255, 255, 0.6),
-                   0 0 30px rgba(255, 255, 255, 0.4);
-      animation: textGlow 2s ease-in-out infinite;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #444;
     }
 
-    /* Hiệu ứng chữ phát sáng */
-    @keyframes textGlow {
-      0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
-      50% { text-shadow: 0 0 30px rgba(255, 255, 255, 1); }
+    /* Danh sách */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 15px 0;
+      padding: 15px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    /* Hiệu ứng khi hover */
+    li:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+      display: block;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Xin Chào</h1>
+  <div class="container">
+    <h1>Danh sách tài liệu</h1>
+    <ul>
+      <!-- Mục Kiến trúc máy tính -->
+      <li onclick="openLink('https://www.facebook.com/')">Kiến trúc máy tính</li>
+      <!-- Mục Hệ điều hành -->
+      <li onclick="openLink('https://www.facebook.com/')">Hệ điều hành</li>
+      <!-- Mục Mạng máy tính -->
+      <li onclick="openLink('https://www.facebook.com/')">Mạng máy tính</li>
+    </ul>
+  </div>
+
+  <script>
+    // Hàm mở link khi nhấp vào mục
+    function openLink(url) {
+      window.open(url, "_blank"); // Mở trong tab mới
+    }
+  </script>
 </body>
 </html>
