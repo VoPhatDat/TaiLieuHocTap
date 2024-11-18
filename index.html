@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xin Chào với Hiệu Ứng</title>
+  <style>
+    /* Body toàn màn hình */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(120deg, #ff7eb3, #ff758c, #ff6a70, #ff7850);
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Hiệu ứng background chuyển động */
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Dòng chữ "Xin chào" */
+    h1 {
+      color: white;
+      font-size: 4rem;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                   0 0 20px rgba(255, 255, 255, 0.6),
+                   0 0 30px rgba(255, 255, 255, 0.4);
+      animation: textGlow 2s ease-in-out infinite;
+    }
+
+    /* Hiệu ứng chữ phát sáng */
+    @keyframes textGlow {
+      0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+      50% { text-shadow: 0 0 30px rgba(255, 255, 255, 1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Xin Chào</h1>
+</body>
+</html>
