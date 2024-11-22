@@ -1,84 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Danh sách tài liệu</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Giống W3Schools</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-    /* Container chính */
-    .container {
-      text-align: center;
-    }
+        /* Thanh tab */
+        .tab {
+            overflow: hidden;
+            background-color: #333;
+        }
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #444;
-    }
+        .tab button {
+            background-color: #333;
+            color: white;
+            padding: 14px 16px;
+            border: none;
+            cursor: pointer;
+            float: left;
+            width: 50%;
+            text-align: center;
+            font-size: 17px;
+        }
 
-    /* Danh sách */
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+        .tab button:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
-    li {
-      margin: 15px 0;
-      padding: 15px;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-top: none;
+        }
 
-    /* Hiệu ứng khi hover */
-    li:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
+        .tabcontent ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-    a {
-      text-decoration: none;
-      color: #007bff;
-      display: block;
-    }
+        .tabcontent ul li {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: #ddd;
+            border-radius: 4px;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        .tabcontent ul li:hover {
+            background-color: #bbb;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Danh sách tài liệu</h1>
-    <ul>
-      <!-- Mục Kiến trúc máy tính -->
-      <li onclick="openLink('https://www.facebook.com/')">Kiến trúc máy tính</li>
-      <!-- Mục Hệ điều hành -->
-      <li onclick="openLink('https://www.facebook.com/')">Hệ điều hành</li>
-      <!-- Mục Mạng máy tính -->
-      <li onclick="openLink('https://www.facebook.com/')">Mạng máy tính</li>
-    </ul>
-  </div>
 
-  <script>
-    // Hàm mở link khi nhấp vào mục
-    function openLink(url) {
-      window.open(url, "_blank"); // Mở trong tab mới
-    }
-  </script>
+    <h1>Trang Web Giống W3Schools</h1>
+
+    <!-- Thanh tab -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Intro')">Giới thiệu</button>
+        <button class="tablinks" onclick="openTab(event, 'Docs')">Tài liệu học tập</button>
+    </div>
+
+    <!-- Nội dung của các tab -->
+    <div id="Intro" class="tabcontent">
+        <h3>Giới thiệu</h3>
+        <p>Đây là phần giới thiệu về trang web của chúng tôi.</p>
+    </div>
+
+    <div id="Docs" class="tabcontent">
+        <h3>Tài liệu học tập</h3>
+        <ul>
+            <li><a href="https://drive.google.com/drive/folders/1gJp12oXXNAZhl79lxY5jfBjwRALXsLgB?usp=sharing" target="_blank">Cấu trúc rời rạc</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Ẩn tất cả các tab content
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            
+            // Xóa màu sắc của các tab
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            
+            // Hiển thị tab được chọn và thay đổi màu sắc của tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.style.backgroundColor = "#ddd";
+        }
+        
+        // Mở tab Giới thiệu mặc định khi vào trang
+        document.getElementsByClassName("tablinks")[0].click();
+    </script>
+
 </body>
 </html>
